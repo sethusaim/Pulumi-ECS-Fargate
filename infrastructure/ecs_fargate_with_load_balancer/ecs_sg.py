@@ -1,7 +1,5 @@
 import pulumi_aws as aws
-from ecs_fargate.ecs_variables import *
-from ecs_fargate.ecs_fargate_vpc import get_default_vpc
-
+from ecs_fargate_with_load_balancer.ecs_variables import *
 
 def get_ecs_security_group(vpc):
     try:

@@ -1,5 +1,6 @@
 import pulumi_aws as aws
-from ecs_fargate.ecs_variables import *
+from ecs_fargate_with_load_balancer.ecs_variables import *
+
 from pulumi import ResourceOptions
 
 
@@ -14,7 +15,7 @@ def get_ecs_fargate_service(
             launch_type=ECS_SERVICE_LAUNCH_TYPE,
             task_definition=task_definition.arn,
             network_configuration=aws.ecs.ServiceNetworkConfigurationArgs(
-                assign_public_ip=True,
+                assign_public_ip=ECS_SERVICE_NETWORK_PUBLIC_IP,
                 subnets=vpc_subnets.ids,
                 security_groups=[security_group.id],
             ),

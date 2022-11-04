@@ -1,9 +1,6 @@
 import json
 import pulumi_aws as aws
-from ecs_fargate.ecs_variables import (
-    ECS_TASK_IAM_ROLE_NAME,
-    ECS_TASK_IAM_ROLE_POLICY_NAME,
-)
+from ecs_fargate_with_load_balancer.ecs_variables import ECS_TASK_IAM_ROLE_NAME,ECS_TASK_IAM_ROLE_POLICY_NAME
 
 
 def get_ecs_iam_role():

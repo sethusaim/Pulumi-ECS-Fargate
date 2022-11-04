@@ -1,5 +1,5 @@
 import pulumi_aws as aws
-from ecs_fargate.ecs_variables import *
+from ecs_fargate_with_load_balancer.ecs_variables import *
 
 
 def get_load_balancer_target_group(vpc):

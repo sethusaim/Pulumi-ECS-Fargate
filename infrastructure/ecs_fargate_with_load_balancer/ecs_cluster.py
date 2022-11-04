@@ -1,6 +1,5 @@
 import pulumi_aws as aws
-from ecs_fargate.ecs_variables import ECS_CLUSTER_NAME
-
+from ecs_fargate_with_load_balancer.ecs_variables import ECS_CLUSTER_NAME
 
 def create_ecs_cluster():
     try:

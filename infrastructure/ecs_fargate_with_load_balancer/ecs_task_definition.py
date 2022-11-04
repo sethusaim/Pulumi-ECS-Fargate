@@ -1,6 +1,6 @@
 import pulumi_aws as aws
 import json
-from ecs_fargate.ecs_variables import *
+from ecs_fargate_with_load_balancer.ecs_variables import *
 
 
 def get_ecs_task_definition(iam_role):
