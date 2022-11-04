@@ -1,6 +1,7 @@
 import pulumi_aws as aws
 from ecs_fargate.ecs_variables import *
 
+
 def get_load_balancer_target_group(vpc):
     try:
         atg = aws.lb.TargetGroup(
@@ -10,9 +11,8 @@ def get_load_balancer_target_group(vpc):
             target_type=ECS_TARGET_TYPE,
             vpc_id=vpc.id,
         )
-        
-        return atg
-    
-    except Exception as e:
-        raise e 
 
+        return atg
+
+    except Exception as e:
+        raise e

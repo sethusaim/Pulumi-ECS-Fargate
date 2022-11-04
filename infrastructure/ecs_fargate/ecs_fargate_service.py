@@ -2,7 +2,10 @@ import pulumi_aws as aws
 from ecs_fargate.ecs_variables import *
 from pulumi import ResourceOptions
 
-def get_ecs_fargate_service(cluster,task_definition,security_group,vpc_subnets,target_group,wlb):
+
+def get_ecs_fargate_service(
+    cluster, task_definition, security_group, vpc_subnets, target_group, wlb
+):
     try:
         service = aws.ecs.Service(
             ECS_SERVICE_NAME,
@@ -24,10 +27,8 @@ def get_ecs_fargate_service(cluster,task_definition,security_group,vpc_subnets,t
             ],
             opts=ResourceOptions(depends_on=[wlb]),
         )
-        
+
         return service
-            
+
     except Exception as e:
-        raise e 
-
-
+        raise e

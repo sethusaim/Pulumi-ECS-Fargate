@@ -2,6 +2,7 @@ import pulumi_aws as aws
 import json
 from ecs_fargate.ecs_variables import *
 
+
 def get_ecs_task_definition(iam_role):
     try:
         task_definition = aws.ecs.TaskDefinition(
@@ -28,10 +29,8 @@ def get_ecs_task_definition(iam_role):
                 ]
             ),
         )
-        
+
         return task_definition
-    
+
     except Exception as e:
-        raise e 
-
-
+        raise e
